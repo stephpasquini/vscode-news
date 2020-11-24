@@ -2,7 +2,7 @@
   "name": "vscode-news",
   "displayName": "vscode-news",
   "description": "Get trending news directly in VS Code",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "publisher": "stephpasquini",
   "engines": {
     "vscode": "^1.51.0"
