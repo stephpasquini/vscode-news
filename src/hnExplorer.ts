@@ -45,5 +45,9 @@ export default class HNExplorer {
       this.hnViewer.title = 'Hacker News : Best Stories';
       this.hnProvider.refresh();
     });
+
+    vscode.commands.registerCommand('news.hnRefresh', () =>
+      this.hnProvider.refresh(),
+    );
   }
 }

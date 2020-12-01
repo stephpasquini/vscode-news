@@ -5,6 +5,13 @@ import { GithubTrendingRepo } from '../types';
 
 export default class GithubProvider
   implements vscode.TreeDataProvider<GithubRepoItem> {
+  private _onDidChangeTreeData: vscode.EventEmitter<
+    GithubRepoItem | undefined | null | void
+  > = new vscode.EventEmitter<GithubRepoItem | undefined | null | void>();
+  readonly onDidChangeTreeData: vscode.Event<
+    GithubRepoItem | undefined | null | void
+  > = this._onDidChangeTreeData.event;
+
   getTreeItem(element: GithubRepoItem): vscode.TreeItem {
     return element;
   }
@@ -13,6 +20,10 @@ export default class GithubProvider
     element?: GithubRepoItem,
   ): vscode.ProviderResult<GithubRepoItem[]> {
     return Promise.resolve(this.getGithubTrendingRepos());
+  }
+
+  refresh(): void {
+    this._onDidChangeTreeData.fire();
   }
 
   private async getGithubTrendingRepos(): Promise<GithubRepoItem[]> {
