@@ -7,8 +7,6 @@ import HNExplorer from './hnExplorer';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  console.log('vscode-news is now active!');
-
   const githubExplorer = new GithubExplorer();
   const hnExplorer = new HNExplorer();
   githubExplorer.register();
