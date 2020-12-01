@@ -2,7 +2,7 @@
   "name": "vscode-news",
   "displayName": "vscode-news",
   "description": "Get trending news directly in VS Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "stephpasquini",
   "engines": {
     "vscode": "^1.51.0"
@@ -39,6 +39,22 @@
       {
         "command": "news.hnBestStories",
         "title": "Best stories"
+      },
+      {
+        "command": "news.githubRefresh",
+        "title": "Refresh",
+        "icon": {
+          "light": "resources/icons/light/refresh.svg",
+          "dark": "resources/icons/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "news.hnRefresh",
+        "title": "Refresh",
+        "icon": {
+          "light": "resources/icons/light/refresh.svg",
+          "dark": "resources/icons/dark/refresh.svg"
+        }
       }
     ],
     "viewsContainers": {
@@ -75,6 +91,16 @@
         {
           "command": "news.hnBestStories",
           "when": "view == hn"
+        },
+        {
+          "command": "news.hnRefresh",
+          "when": "view == hn",
+          "group": "navigation"
+        },
+        {
+          "command": "news.githubRefresh",
+          "when": "view == githubTrending",
+          "group": "navigation"
         }
       ]
     }

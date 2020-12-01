@@ -38,6 +38,10 @@ export default class GithubExplorer {
         webview.panel.reveal();
       },
     );
+
+    vscode.commands.registerCommand('news.githubRefresh', () =>
+      this.githubProvider.refresh(),
+    );
   }
 
   private markdownCompiler(): any {
